@@ -20,31 +20,55 @@ DATA = {
 }
 
 def omlet(request):
+    servings = int(request.GET['servings'])
     omlet = {}
     for k, i in DATA.items():
         if k == 'omlet':
-            omlet[k] = i
+            if servings > 0:
+                omlet_serv = {}
+                for key, value in i.items():
+                    ser = value * servings
+                    print(ser)
+                    omlet_serv[key] = ser
+                omlet[k] = omlet_serv
+            else:
+                omlet[k] = i
     context = omlet
     print(context)
     return render(request, 'omlet.html', context)
 
 def pasta(request):
+    servings = int(request.GET['servings'])
     pasta = {}
     for k, i in DATA.items():
         if k == 'pasta':
-            pasta[k] = i
-        else:
-            pass
+            if servings > 0:
+                pasta_serv = {}
+                for key, value in i.items():
+                    ser = value * servings
+                    print(ser)
+                    pasta_serv[key] = ser
+                pasta[k] = pasta_serv
+            else:
+                pasta[k] = i
     context = pasta
     print(context)
     return render(request, 'pasta.html', context)
+
 def buter(request):
+    servings = int(request.GET['servings'])
     buter = {}
     for k, i in DATA.items():
         if k == 'buter':
-            buter[k] = i
-        else:
-            pass
+            if servings > 0:
+                buter_serv = {}
+                for key, value in i.items():
+                    ser = value * servings
+                    print(ser)
+                    buter_serv[key] = ser
+                buter[k] = buter_serv
+            else:
+                buter[k] = i
     context = buter
     print(context)
     return render(request, 'buter.html', context)

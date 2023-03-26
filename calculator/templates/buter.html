@@ -5,7 +5,9 @@
     <title>Это страничка про бутер</title>
 </head>
 <body>
-бутер
-{{buter}}
+Бутерброд
+ {% for key, values in buter.items %}
+     <p>{{key}}: {{values}} </p>
+ {% endfor %}
 </body>
 </html>

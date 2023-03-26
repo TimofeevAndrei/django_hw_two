@@ -6,6 +6,8 @@
 </head>
 <body>
 Паста
-{{pasta}}
+ {% for key, values in pasta.items %}
+     <p>{{key}}: {{values}} </p>
+ {% endfor %}
 </body>
 </html>

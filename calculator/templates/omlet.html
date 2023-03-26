@@ -6,6 +6,8 @@
 </head>
 <body>
 Омлет
-{{omlet}}
+ {% for key, values in omlet.items %}
+     <p>{{key}}: {{values}} </p>
+ {% endfor %}
 </body>
 </html>

@@ -19,6 +19,36 @@ DATA = {
     # можете добавить свои рецепты ;)
 }
 
+def omlet(request):
+    omlet = {}
+    for k, i in DATA.items():
+        if k == 'omlet':
+            omlet[k] = i
+    context = omlet
+    print(context)
+    return render(request, 'omlet.html', context)
+
+def pasta(request):
+    pasta = {}
+    for k, i in DATA.items():
+        if k == 'pasta':
+            pasta[k] = i
+        else:
+            pass
+    context = pasta
+    print(context)
+    return render(request, 'pasta.html', context)
+def buter(request):
+    buter = {}
+    for k, i in DATA.items():
+        if k == 'buter':
+            buter[k] = i
+        else:
+            pass
+    context = buter
+    print(context)
+    return render(request, 'buter.html', context)
+
 # Напишите ваш обработчик. Используйте DATA как источник данных
 # Результат - render(request, 'calculator/index.html', context)
 # В качестве контекста должен быть передан словарь с рецептом:
